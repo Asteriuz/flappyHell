@@ -139,7 +139,7 @@ const play = () => {
             cima = document.querySelector(".activeup")
             baixo = document.querySelector(".activedown")
             score.innerHTML = Number(score.innerHTML) + 1
-            hell == false && Number(score.innerHTML) >= 1 ? changeHell() : null
+            hell == false && Number(score.innerHTML) >= 15 ? changeHell() : null
         }
     }, 10)
 }
