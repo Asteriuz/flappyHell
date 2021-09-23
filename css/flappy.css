@@ -1,0 +1,178 @@
+body {
+    display: flex;
+    padding: 0;
+    margin: 0;
+    /* background-color: #0D262D; */
+    color: #fff;
+    height: 100%;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100%;
+}
+
+@font-face {
+    font-family: 'Oswald';
+    src: url('../fonts/Oswald-Regular.ttf') format('truetype');
+}
+
+html {
+    height: 100%;
+}
+
+* {
+    font-family: 'Oswald', sans-serif;
+}
+
+h1 {
+    color: black;
+}
+
+[wm-flappy] {
+    position: absolute;
+    bottom: 120px;
+    height: 677px;
+    width: 1440px;
+    background-color: white;
+    overflow: hidden;
+    transition: filter 2s;
+}
+
+@media (height: 1080px) {
+    [wm-flappy] {bottom: 190px}
+}
+
+#animatedBackground {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: url("../imgs/background.png") center repeat-x;
+    background-size: auto 100%;
+    background-position: 0 0;
+  /*adjust s value for speed*/
+    animation: animatedBackground 100s linear infinite;
+    animation-play-state: running;
+}
+
+@keyframes animatedBackground {
+    from {
+      background-position: 0 0;
+    }
+  /*use negative width if you want it to flow right to left else and positive for left to right*/
+    to {
+      background-position: -10000px 0;
+    }
+  }
+
+.flashing {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    left: 0;
+    background: url("../imgs/background.png") center repeat-x;
+    background-size: auto 100%;
+    background-position: 0 0;
+    animation: animatedBackground 100s linear infinite;
+    animation-play-state: running;
+    filter: brightness(3);
+    z-index: 1;
+}
+
+.flashhit{
+    animation: none;
+    }
+
+@keyframes flash {
+        from { opacity: 0; } 
+        0% { opacity: 0; }
+        7% { opacity: 0.6; }
+        14% { opacity: 0.2; }
+        21% { opacity: 1; } 
+        28% { opacity: 0; } 
+        to { opacity: 0; }
+    }
+
+.score {
+    position: absolute;
+    color: white;
+    margin: 0;
+    right: 10px;
+    z-index: 1;
+    font-size: 4em;
+
+}
+
+.infoPlay {
+    width: 100%;
+    text-align: center;
+    position: absolute;
+    bottom: 0px;
+    font-size: 2.5em;
+    z-index: 1;
+}
+
+.bird {
+    position: absolute;
+    height: 5%;
+    bottom: 300px;
+    left: 400px;
+    /* transform: rotate(-10deg); */
+}
+
+.tubos {
+    position: absolute;
+    right: 0px;
+    height: 100%;
+}
+
+.tubo {
+    position: absolute;
+    display: flex;
+    right: 0px;
+    height: 100%;
+    flex-direction: column;
+    align-items: center;
+}
+
+.cima {
+    background: linear-gradient(90deg, rgb(15, 110, 15) 0%, rgba(32,121,9,1) 25%, rgba(26,255,42,1) 100%);;
+    border-left: solid 5px black;
+    border-right: solid 5px black;
+    width: 100px;
+    height: 415px;
+}
+
+.baixo {
+    background: linear-gradient(90deg, rgb(15, 110, 15) 0%, rgba(32,121,9,1) 25%, rgba(26,255,42,1) 100%);;
+    border-left: solid 5px black;
+    border-right: solid 5px black;
+    width: 100px;
+    flex-grow: 1;
+    flex-shrink: 1;
+}
+
+.passagem {
+    opacity: 0%;
+    background: rgba(255, 0, 0, 0);
+    min-height: 170px;
+    width: 130px;
+}
+
+.cimaSlab {
+    background: linear-gradient(90deg, rgb(15, 110, 15) 0%, rgba(32,121,9,1) 25%, rgba(26,255,42,1) 100%);;
+    border: solid 5px black;
+    width: 110px;
+    min-height: 25px;
+}
+
+.baixoSlab {
+    background: linear-gradient(90deg, rgb(15, 110, 15) 0%, rgba(32,121,9,1) 25%, rgba(26,255,42,1) 100%);;
+    border: solid 5px black;
+    margin-top: auto;
+    width: 110px;
+    min-height: 25px;
+}

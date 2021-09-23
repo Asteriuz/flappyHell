@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Flappy Bird</title>
+    <link rel="stylesheet" href="css/flappy.css">
+</head>
+
+<body class="conteudo">
+    <h1>Flappy Bird</h1>
+    <div wm-flappy style="cursor: none;">
+        <div id="animatedBackground"></div>
+        <div class="flashing flashhit"></div>
+        <h1 class="score">0</h1>
+        <h2 class="infoPlay">Aperte espaço para jogar</h2>
+        <img class="bird" src="imgs\passaro.png" alt="BIRD">
+        <div class="tubos">
+            <div class="tubo">
+                <div class="cima activeup"></div>
+                <div class="cimaSlab activeupslab"></div>
+                <div class="passagem"></div>
+                <div class="baixoSlab activedownslab"></div>
+                <div class="baixo activedown"></div>
+            </div>
+        </div>
+    </div>
+    <script src="js/flappy.js"></script>
+</body>
+
+</html>
